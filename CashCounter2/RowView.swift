@@ -25,6 +25,8 @@ struct RowView: View {
 //            PickerView()
             TextField("0", text: $numberOfUnits)
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                .keyboardType(.numberPad)
+//                .onChange(of: numberOfUnits , perform: {print("Here")})
         }
         .padding(EdgeInsets(top: 0, leading: 120, bottom: 0, trailing: 20))
     }
