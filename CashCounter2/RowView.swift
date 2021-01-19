@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct RowView: View {
-    var imageName : String
-    var denomination : String
-    var currentCount: Int
-    var pickerVisible: Bool
-    @State var newCount: Int
+    @Binding var numberOfUnits : String
+    var name : String
+//    var imageName : String
     
     var body: some View {
         HStack {
-//           Image(imageName)
-//                .scaleEffect(0.1)
-//            Spacer()
-            Text(denomination)
-                .padding(5)
+        /*
+           Image(imageName)
+                .scaleEffect(0.1)
+            Spacer()
+            */
+            Text(name)
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             Spacer()
 //            PickerView()
-            TextField("\(currentCount)", text: "\($newCount)")
+            TextField("0", text: $numberOfUnits)
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
         }
-        .padding(.leading)
+        .padding(EdgeInsets(top: 0, leading: 120, bottom: 0, trailing: 20))
     }
 }

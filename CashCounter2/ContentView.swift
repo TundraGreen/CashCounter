@@ -8,28 +8,68 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var calculator = Calculator()
+    var calculator = Calculator()
 
-    @State var countInputs = Array(repeating: 0, count: 10)
+    @State var countInputs = Array(repeating: "", count: 10)
 
     var body: some View {
         Text("Cash Counter").bold()
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             .font(.title)
         VStack {
+            
             Group {
                 RowView(
-                    imageName: calculator.units[0].imageName,
-                    denomination: calculator.units[0].name,
-                    currentCount: calculator.units[0].numberOfUnits,
-                    pickerVisible: calculator.units[1].pickerVisible,
-                    newCount: $countInputs[0])
+                    numberOfUnits: $countInputs[0],
+                    name: calculator.units[0].name//,
+//                    imageName:calculator.units[0].imageName
+                )
                 RowView(
-                    imageName: calculator.units[1].imageName,
-                    denomination: calculator.units[1].name,
-                    currentCount: calculator.units[1].numberOfUnits,
-                    pickerVisible: calculator.units[1].pickerVisible,
-                    newCount: $countInputs[1])
+                    numberOfUnits: $countInputs[1],
+                    name: calculator.units[1].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[2],
+                    name: calculator.units[2].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[3],
+                    name: calculator.units[3].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[4],
+                    name: calculator.units[4].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[5],
+                    name: calculator.units[5].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[6],
+                    name: calculator.units[6].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[7],
+                    name: calculator.units[7].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[8],
+                    name: calculator.units[8].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+                RowView(
+                    numberOfUnits: $countInputs[9],
+                    name: calculator.units[9].name//,
+//                    imageName:calculator.units[0].imageName
+                )
+
             }
             VStack {
                 VStack  {

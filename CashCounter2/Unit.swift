@@ -8,9 +8,9 @@
 import Foundation
 
 struct Unit {
-    var name : String = ""
-    var numberOfUnits  = 0
-    var valueOfUnit  = 0.0
+    var name = ""
+    var numberOfUnits = 0
+    var valueOfUnit = 0.0
     var imageName = ""
     var pickerVisible = false
     
