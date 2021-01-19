@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Unit {
+struct Unit {
     var name : String = ""
     var numberOfUnits : Int = 0
     var valueOfUnit : Double = 0.0
@@ -19,9 +19,8 @@ class Unit {
         self.valueOfUnit = valueOfUnit
         self.imageName = imageName
     }
-    /*
-    func value() -> Int {
-        return multiplier * count
-    }
-     */
+    
+    func product() -> Double { self.valueOfUnit * Double(self.numberOfUnits) }
+
 }
+

@@ -7,8 +7,11 @@
 
 import Foundation
 
-class Calculator  {
-    var units:[Unit] = [
+struct Calculator  {
+    
+    var units: [Unit] =
+    
+    [
         Unit(name:"500", numberOfUnits: 0, valueOfUnit: 500.0, imageName: "Bill_500"),
         Unit(name:"200", numberOfUnits: 0, valueOfUnit: 200.0, imageName: "Bill_200"),
         
@@ -25,11 +28,11 @@ class Calculator  {
         Unit(name:"0.5", numberOfUnits: 0, valueOfUnit: 0.5, imageName: "Coin_0.5")
     ]
 
-    func sum() -> String {
+    func sum() -> Double {
         var total = 0.0
-        for i in [0...9] {
-            total += Double(units[i].numberOfUnits) * units[i].valueOfUnit
+        for unit in units {
+            total += unit.product()
         }
-        return String(total)
+        return total
     }
 }

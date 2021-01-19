@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var calculator = Calculator()
+    @State var calculator = Calculator()
 
     @State var countInputs = Array(repeating: 0, count: 10)
 
@@ -40,7 +40,7 @@ struct ContentView: View {
                         .frame(alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 100, bottom: -5, trailing: 5))
                     Spacer()
-                    Text(sum)
+                    Text(String(format: "%.0f",calculator.sum()))
                         .font(.system(size: 20))
                         .bold()
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: -5, trailing: 100))
@@ -48,32 +48,6 @@ struct ContentView: View {
             }
         }
     }
-    
-    var sum : String {
-        String(format: "$%0.1f",
-            {
-                var temp = 0.0
-                for i in 0...9 {
-                    temp += calculator.units[i].valueOfUnit * calculator.units[i].numberOfUnits
-                 }
-                return temp
-            }
-        }
-
-    
-/*
-    func calculateSum(index: Int, countString: String)   {
-        let count = Int((countString as NSString).intValue)
-        calculator.units[index].numberOfUnits = count
-        var tempSum = 0.0
-        for i in 0...9 {
-            let tempMultiplier = calculator.units[i].valueOfUnit
-            let tempCount = calculator.units[i].numberOfUnits
-            tempSum += Double(tempCount) * tempMultiplier
-        }
-        self.sum = tempSum
-    }
- */
 }
 
 struct ContentView_Previews: PreviewProvider {
