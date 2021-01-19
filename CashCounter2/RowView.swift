@@ -11,8 +11,8 @@ struct RowView: View {
     var imageName : String
     var denomination : String
     var currentCount: Int
-//    var pickerVisible = false
-    @Binding var newCount: Int
+    var pickerVisible: Bool
+    @State var newCount: Int
     
     var body: some View {
         HStack {
@@ -22,14 +22,9 @@ struct RowView: View {
             Text(denomination)
                 .padding(5)
             Spacer()
-            PickerView(value: newCount)
+//            PickerView()
+            TextField("\(currentCount)", text: "\($newCount)")
         }
+        .padding(.leading)
     }
 }
-/*
-struct RowView_Previews: PreviewProvider {
-    static var previews: some View {
-        RowView(imageName: String, denomination: String, count: Binding<Int>)
-    }
-}
-*/

@@ -8,16 +8,25 @@
 import SwiftUI
 
 struct PickerView: View {
-    var value = 0
+//    var value = 0
     @State private var selectedValue = 0
+    @State private var pickerVisible = false
     var body: some View {
         VStack {
-            Picker(selection: $selectedValue, label: Text("Qty")) {
-                ForEach(0..<21) {
-                    i in Text(String(i))
+            Button(String(selectedValue)) {
+                self.pickerVisible.toggle()
+            }
+            if pickerVisible {
+                Picker(selection: $selectedValue, label: Text("Qty")) {
+                    ForEach(0..<21) {
+                        i in Text(String(i))
+                    }
+                }
+                .onTapGesture {
+                    self.pickerVisible.toggle()
                 }
             }
-            Text("You Selected \(selectedValue)")
-        }.pickerStyle(WheelPickerStyle())
+        }
+        .padding(.trailing)
     }
 }

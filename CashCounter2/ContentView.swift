@@ -22,11 +22,13 @@ struct ContentView: View {
                     imageName: calculator.units[0].imageName,
                     denomination: calculator.units[0].name,
                     currentCount: calculator.units[0].numberOfUnits,
+                    pickerVisible: calculator.units[1].pickerVisible,
                     newCount: $countInputs[0])
                 RowView(
                     imageName: calculator.units[1].imageName,
                     denomination: calculator.units[1].name,
                     currentCount: calculator.units[1].numberOfUnits,
+                    pickerVisible: calculator.units[1].pickerVisible,
                     newCount: $countInputs[1])
             }
             VStack {
